@@ -24,7 +24,7 @@ const Profile =({
           <img for="photo-upload" src={src}/>
         </div>
       </label>
-      <button type="submit" className="edit">Extract </button>
+      <button type="submit" className="edit">EXTRACT </button>
     </form>
   </div>
 

@@ -156,7 +156,8 @@ button {
 }
 
 .edit {
-    color: #fff;
+    font-weight: 600;
+    color: #000000;
     width: 180px;
 }
 
