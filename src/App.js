@@ -25,6 +25,7 @@ const Profile =({
         </div>
       </label>
       <button type="submit" className="edit">EXTRACT </button>
+      <p>0238r2r</p>
     </form>
   </div>
 
@@ -45,7 +46,6 @@ export default class App extends Component {
   state = {
     file: '',
     imagePreviewUrl: 'svg.svg',
-
     active: 'edit'
   }
 
