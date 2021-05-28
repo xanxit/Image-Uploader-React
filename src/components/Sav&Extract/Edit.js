@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../App.css'
 function Edit({ onSubmit, children }) {
   return (
     <div className="card">

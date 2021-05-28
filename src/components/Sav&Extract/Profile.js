@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../App.css'
 function Profile({ onSubmit, src }) {
   return (
     <div className="card">

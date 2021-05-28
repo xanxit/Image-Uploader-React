@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../../App.css'
 function ImgUpload({ onChange, src }) {
   return (
     <label htmlFor="photo-upload" className="custom-file-upload fas">
