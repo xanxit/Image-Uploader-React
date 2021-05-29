@@ -9,6 +9,7 @@ function Func() {
   const [file, setFile] = useState("");
   const [imagePreview, setImagePreview] = useState('svg.svg');
   const [active, setActive] = useState("edit");
+  const { data } ={};
   const photoUpload = (e) => {
     e.preventDefault();
     const reader = new FileReader();
@@ -21,12 +22,22 @@ function Func() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let activeP = active === "edit" ? "profile" : "edit";
-    setActive(activeP);
+    setActive("profile");
     if (active === "edit") {
-      const { data } = await Axiosconfig.post("/images", file);
+      data = await Axiosconfig.post("/images", file);
     } else {
-      const { data } = await Axiosconfig.get("/images");
+      data  = await Axiosconfig.get("/images");
+    }
+  
+
+  };
+  const handleExtract = async (e) => {
+    e.preventDefault();
+
+    if (active === "edit") {
+      data = await Axiosconfig.post("/images", file);
+    } else {
+      data  = await Axiosconfig.get("/images");
     }
   };
 
@@ -37,7 +48,7 @@ function Func() {
           <ImgUpload onChange={photoUpload} src={imagePreview} />
         </Edit>
       ) : (
-        <Profile onSubmit={handleSubmit} src={imagePreview} />
+        <Profile onSubmit={handleExtract} src={imagePreview} data ={data} />
       )}
     </div>
   );
